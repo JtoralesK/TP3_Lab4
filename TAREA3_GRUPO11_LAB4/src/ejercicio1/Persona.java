@@ -1,6 +1,6 @@
 package ejercicio1;
 
-public class Persona {
+public class Persona implements Comparable<Persona>{
 	
 	String nombre;
 	String apellido;
@@ -12,7 +12,7 @@ public class Persona {
 		this.dni = 0;
 	}
 	
-	public Persona(String nombre, String apellido, int dni) {
+	public Persona(String apellido, String nombre, int dni) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
@@ -47,4 +47,12 @@ public class Persona {
 	    }
 	    return true;
 	}
+
+	@Override
+	public int compareTo(Persona o) {
+		// TODO Auto-generated method stub
+		return this.apellido.compareToIgnoreCase(o.getApellido());
+	}
+	
+	
 }
