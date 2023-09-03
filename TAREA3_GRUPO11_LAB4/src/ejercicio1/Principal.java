@@ -13,8 +13,9 @@ import java.util.TreeSet;
 public class Principal {
 
 	public static void main(String[] args) {
-		
-		//punto A
+		System.out.println("-------------------------------------------------");
+		System.out.println("Punto A");
+		System.out.println("-------------------------------------------------");
 		try {
 			Persona.verificarDniInvalido("41544556");
 			System.out.println("dni verificado");
@@ -29,8 +30,9 @@ public class Principal {
 			System.out.println(e.getMessage());
 		}
 		
-		
-		//punto B
+		System.out.println("-------------------------------------------------");
+		System.out.println("Punto B");
+		System.out.println("-------------------------------------------------");
 		FileReader input;
 		BufferedReader buffer;
 		TreeSet<Persona> list = new TreeSet<Persona>();
@@ -61,8 +63,9 @@ public class Principal {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-	
-		//punto C
+		System.out.println("-------------------------------------------------");
+		System.out.println("Punto C");
+		System.out.println("-------------------------------------------------"+"\n");
 		try {
             FileWriter output = new FileWriter("Resultado.txt");
             BufferedWriter writer = new BufferedWriter(output);
@@ -77,10 +80,26 @@ public class Principal {
 
             writer.close();
             output.close();
-            System.out.println("Personas guardadas en Resultado.txt");
+            System.out.println("Personas guardadas en Resultado.txt :");
         } catch (IOException e) {
             e.printStackTrace();
         }
+		FileReader Entrada2;
+		BufferedReader miBuffer2;
+		try {
+			Entrada2 = new FileReader("Resultado.txt");
+			miBuffer2 = new BufferedReader(Entrada2);
+			String linea= "";
+			while(linea!=null) {
+				System.out.println(linea);
+				linea = miBuffer2.readLine();
+			}
+			Entrada2.close();
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("\n"+"-------------------------------------------------"+"\n");
 	}
 
 
